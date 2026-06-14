@@ -6,3 +6,8 @@ else
  echo "[FAIL] Root login enabled"
 fi
 ss -tulnp
+if command -v docker >/dev/null 2>&1; then
+    echo
+    echo "[INFO] Docker detected"
+    bash ./scripts/docker_security_check.sh
+fi
